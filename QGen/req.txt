@@ -6,3 +6,6 @@ sentencepiece
 pdfplumber
 python-docx
 reportlab
+spacy
+keybert
+sentence-transformers
