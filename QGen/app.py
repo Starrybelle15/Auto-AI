@@ -15,6 +15,14 @@ from transformers import (
 
 from docx import Document
 
+from functools import lru_cache
+
+@lru_cache(maxsize=1)
+def load_model():
+    tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-small")
+    model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-small")
+    model.to(device)
+    return tokenizer, model
 # ------------------------------------------
 # Load Model
 # ------------------------------------------
@@ -187,6 +195,8 @@ def generate_questions(text,
         max_length=512
     )
 
+    tokenizer, model = load_model()
+
     inputs = {k: v.to(device) for k, v in inputs.items()}
 
     outputs = model.generate(
@@ -213,31 +223,30 @@ def generate_questions(text,
 # Read Uploaded File
 # ------------------------------------------
 
+filename = file.name
+
 def extract_text(file):
 
     if file is None:
         return ""
 
-    filename = file.name
+    if isinstance(file, str):
+        filename = file
+    else:
+        filename = file.name
 
     extension = os.path.splitext(filename)[1].lower()
 
     if extension == ".pdf":
-
         return read_pdf(filename)
 
     elif extension == ".docx":
-
         return read_docx(filename)
 
     elif extension == ".txt":
-
         return read_txt(filename)
 
-    else:
-
-        return ""
-
+    return ""
 # ------------------------------------------
 # Main Function
 # ------------------------------------------
