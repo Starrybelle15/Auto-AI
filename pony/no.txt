@@ -12,3 +12,5 @@ Counterfeit Detection Dataset: Research-grade datasets utilized for hybrid atten
 Resale Market Insights
 
 Vogue/Resale Platform Data: While not a raw downloadable dataset, recent analyses from The RealReal, Rebag, and eBay provide detailed metrics on resale value retention for specific models, such as the The Row Margaux (92% increase) and Hermès Kelly Mini II (282% retention). 
+
+https://www.researchgate.net/publication/358278878_Hybrid_attention_network_with_appraiser-guided_loss_for_counterfeit_luxury_handbag_detection/citation/download
