@@ -1,2 +1,2 @@
-# Auto-QGen-AI
-An automatic question generator
+# Auto-AI
+A luxury bag reviewer
