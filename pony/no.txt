@@ -1,0 +1,14 @@
+Several specialized datasets exist for analyzing luxury handbags, focusing on pricing, brand identification, and resale value. 
+
+Pricing and Transaction Data
+
+Luxury-Handbag-Price-Prediction: A GitHub dataset used for regression analysis, featuring expert-selected features such as brand (e.g., Chanel, Hermes), skin type (e.g., crocodile, calf), and structural details like zip count and compartment numbers. 
+Alt/Finance Global Luxury Handbag Auctions Info: An institutional-grade dataset available on AWS Marketplace providing granular transaction data from major auction houses and retailers over 25 years, including sale prices, condition assessments, and geographic locations. 
+Image and Brand Recognition Data
+
+Pursearch Dataset: Comprises a branded handbag dataset of 5,000+ images across six popular brands and styles, and a retailer dataset with 3,000+ styles from sources like Saks Fifth Avenue and Shein, used for image-based identification and recommendation. 
+Hayati Hamzah Brand Detection Dataset: A manually curated set of 7,500 evenly-distributed images across five brands (Celine, Chanel, Gucci, Givenchy, Hermes), collected via web scraping and augmented for CNN training. 
+Counterfeit Detection Dataset: Research-grade datasets utilized for hybrid attention networks, focusing on fine-grained classification and class imbalance issues in authenticating luxury items. 
+Resale Market Insights
+
+Vogue/Resale Platform Data: While not a raw downloadable dataset, recent analyses from The RealReal, Rebag, and eBay provide detailed metrics on resale value retention for specific models, such as the The Row Margaux (92% increase) and Hermès Kelly Mini II (282% retention). 
