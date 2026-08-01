@@ -1,1 +1,10 @@
-
+gradio>=5.0.0
+transformers
+torch
+plotly
+pandas
+keybert
+sentence-transformers
+serpapi
+google-search-results
+python-dotenv
