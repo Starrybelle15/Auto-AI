@@ -1,55 +1,21 @@
-PROMPTS = {
+from transformers import pipeline
 
-"MCQ":
+summarizer = pipeline(
+    "summarization",
+    model="facebook/bart-large-cnn"
+)
 
-"""
-You are an expert educational assessment designer.
+def summarize(text):
 
-Generate exactly {n} multiple-choice questions.
+    if len(text) < 300:
 
-Requirements
+        return text
 
-• Four options A-D
+    summary = summarizer(
+        text[:2500],
+        max_length=120,
+        min_length=40,
+        do_sample=False
+    )
 
-• Only one correct answer
-
-• Cover the important concepts.
-
-Material
-
-{text}
-""",
-
-"SHORT":
-
-"""
-Generate exactly {n} short answer questions.
-
-Material
-
-{text}
-""",
-
-"TRUE_FALSE":
-
-"""
-Generate exactly {n} True or False questions.
-
-Also provide the correct answer.
-
-Material
-
-{text}
-""",
-
-"ESSAY":
-
-"""
-Generate exactly {n} essay questions.
-
-Material
-
-{text}
-"""
-
-}
+    return summary[0]["summary_text"]
